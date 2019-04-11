@@ -38,10 +38,9 @@ Librerias externas
 
 * animate.scss
 
-/*!
- * animate.css -https://daneden.github.io/animate.css/
- * Version - 3.5.1
- * Licensed under the MIT license - http://opensource.org/licenses/MIT
- *
- * Copyright (c) 2016 Daniel Eden
- */
+ animate.css -https://daneden.github.io/animate.css/
+ Version - 3.5.1
+ Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+ Copyright (c) 2016 Daniel Eden
+ 
