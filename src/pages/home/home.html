@@ -1,14 +1,23 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+<ion-content class="login-content main-bg ">
+  <ion-content>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <div class="logo animated fadeInUp" style="display: -webkit-box;">
+      <img src="assets/imgs/titulo.png" alt="">
+    </div>
+
+    <ion-grid class="grid" style="margin-top: 60px;">
+      <ion-row class="row">
+        <ion-col class="col">
+          <button ion-button block outline (click)="goLogin()" color="light" class="button">Iniciar sesión</button>
+        </ion-col>
+      </ion-row>
+      <ion-row class="row">
+        <ion-col class="col">
+          <button ion-button block outline (click)="goRegister()" color="light" class="button">Registrate</button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-content>
 </ion-content>

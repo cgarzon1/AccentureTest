@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>SOLICITAR CRÉDITO</ion-title>
+    <ion-buttons right (click)="goExit()">
+      <button ion-button icon-only>
+        <ion-icon ios="ios-home" md="md-exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div padding class="animated fadeInLeft">
+    <form [formGroup]="formauth" (ngSubmit)="goCalcular()">
+
+
+      <ion-item>
+        <ion-input type="text" placeholder="Nombre Empresa" formControlName="nombreE" [(ngModel)]="nombreE"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container" *ngIf="formauth.get('nombreE').errors && formauth.get('nombreE').dirty">
+        <p class="danger" *ngIf="formauth.get('nombreE').hasError('required')">
+          Campo requerido.
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Nit" formControlName="nit" [(ngModel)]="nit"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container" *ngIf="formauth.get('nit').errors && formauth.get('nit').dirty">
+        <p class="danger" *ngIf="formauth.get('nit').hasError('required')">
+          Campo requerido.
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="number" placeholder="Salario" formControlName="salario" [(ngModel)]="salario"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container" *ngIf="formauth.get('salario').errors && formauth.get('salario').dirty">
+        <p class="danger" *ngIf="formauth.get('salario').hasError('required')">
+          Campo requerido.
+        </p>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-datetime placeholder="Fecha Ingreso" formControlName="fechaI" [(ngModel)]="fechaI"
+          displayFormat="MM/DD/YYYY">
+        </ion-datetime>
+      </ion-item>
+
+
+
+      <button ion-button block outline color="light" [disabled]="!formauth.valid" class="login-button">Calcular</button>
+
+    </form>
+  </div>
+</ion-content>

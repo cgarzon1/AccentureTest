@@ -1,0 +1,59 @@
+<ion-content padding class="transparent-header">
+  <ion-header>
+    <ion-navbar>
+    </ion-navbar>
+  </ion-header>
+  <div class="logo animated fadeInUp" style="display: -webkit-box;">
+    <img src="assets/imgs/titulo.png" alt="">
+  </div>
+  <div padding class="animated fadeInLeft">
+    <form [formGroup]="formauth" (ngSubmit)="goRegister()">
+
+      <ion-item>
+        <ion-input type="number" placeholder="Identificación" formControlName="identificacion"
+          [(ngModel)]="identificacion"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container"
+        *ngIf="formauth.get('identificacion').errors && formauth.get('identificacion').dirty || formauth.get('identificacion').hasError('pattern')">
+        <p class="danger" *ngIf="formauth.get('identificacion').hasError('required')">
+          Identificación no válida.
+        </p>
+        <p class="danger" *ngIf="formauth.get('identificacion').hasError('pattern')">
+          Identificación no válida.
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Nombre" formControlName="nombre" [(ngModel)]="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container" *ngIf="formauth.get('nombre').errors && formauth.get('nombre').dirty">
+        <p class="danger" *ngIf="formauth.get('nombre').hasError('required')">
+          Campo requerido.
+        </p>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Apellido" formControlName="apellido" [(ngModel)]="apellido"></ion-input>
+      </ion-item>
+
+      <ion-item class="danger-container" *ngIf="formauth.get('apellido').errors && formauth.get('apellido').dirty">
+        <p class="danger" *ngIf="formauth.get('apellido').hasError('required')">
+          Campo requerido.
+        </p>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-datetime placeholder="Fecha Nacimiento" formControlName="fechaC" [(ngModel)]="fechaC" displayFormat="MM/DD/YYYY">
+        </ion-datetime>
+      </ion-item>
+
+
+      <button ion-button block outline color="light" [disabled]="!formauth.valid"
+        class="login-button">Registrar</button>
+
+    </form>
+  </div>
+</ion-content>
